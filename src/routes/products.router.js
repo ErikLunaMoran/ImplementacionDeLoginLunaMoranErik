@@ -8,6 +8,7 @@ const productsManager = new ProductsManager();
 
 // Ruta para obtener los productos
 router.get("/", async (req, res) => {
+  const products = await productsManager.getAll();
   try {
     const { limit, page, sort, query } = req.query;
 
